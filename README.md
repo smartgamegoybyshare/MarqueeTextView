@@ -6,9 +6,18 @@
 
 <img src="/resources/MarqueeView.gif" style="width: 30%;">
 
-#### Gradle:
+#### Gradle Project:
 
-    implementation 'com.smart:MarqueeView:<latest-version>'
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+	
+#### Gradle Module:
+
+    implementation 'com.github.smartgamegoybyshare:MarqueeTextView:1.0.1'
 	
 #### 属性
 

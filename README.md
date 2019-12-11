@@ -2,7 +2,7 @@
 
 可垂直跑、可水平跑的跑馬燈
 
-### 效果图
+### 效果圖
 
 <img src="/resources/MarqueeView.gif" style="width: 30%;">
 
@@ -19,22 +19,22 @@
 
     implementation 'com.github.smartgamegoybyshare:MarqueeTextView:1.0.1'
 	
-#### 属性
+#### 屬性
 
-| Attribute 属性          | Description 描述 | 
+| Attribute 屬性          | Description 描述 | 
 |:---				     |:---| 
-| mvAnimDuration         | 一行文字动画执行时间 | 
-| mvInterval         | 两行文字翻页时间间隔 | 
+| mvAnimDuration         | 一行文字動畫執行時間 | 
+| mvInterval         | 兩行文字翻頁時間間隔 | 
 | mvTextSize         | 文字大小 | 
-| mvTextColor         | 文字颜色 | 
+| mvTextColor         | 文字顏色 | 
 | mvGravity         | 文字位置:left、center、right | 
-| mvSingleLine         | 单行设置 |
-| mvDirection        | 动画滚动方向:bottom_to_top、top_to_bottom、right_to_left、left_to_right |
-| mvFont             | 设置字体 |
+| mvSingleLine         | 單行設置 |
+| mvDirection        | 動畫滾動方向:bottom_to_top、top_to_bottom、right_to_left、left_to_right |
+| mvFont             | 設置字體 |
 
 #### XML
 
-    <com.sunfusheng.marqueeview.MarqueeView
+    <com.smart.marqueeview.MarqueeView
         android:id="@+id/marqueeView"
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -44,22 +44,19 @@
         app:mvTextColor="@color/white"
         app:mvTextSize="14sp"
         app:mvSingleLine="true"
-        app:mvFont="@font/huawenxinwei"/>
+        app:mvFont="@font/yourFont"/>
 
-#### 设置字符串列表数据，或者设置自定义的Model数据类型
+#### 設置TextView列表數據，或者設置自定義的Model數據類型
 
     MarqueeView marqueeView = (MarqueeView) findViewById(R.id.marqueeView);
 
     List<String> messages = new ArrayList<>();
-    messages.add("1. 大家好，我是孙福生。");
-    messages.add("2. 欢迎大家关注我哦！");
-    messages.add("3. GitHub帐号：sunfusheng");
-    messages.add("4. 新浪微博：孙福生微博");
-    messages.add("5. 个人博客：sunfusheng.com");
-    messages.add("6. 微信公众号：孙福生");
+    messages.add("1. This is testtext。");
+    messages.add("2. Welcome！");
+    messages.add("3. Java HelloWorld");
     marqueeView.startWithList(messages);
 
-    // 或者设置自定义的Model数据类型
+    // 或者設置自定義的Model數據類型
     public class CustomModel implements IMarqueeItem {
         @Override
         public CharSequence marqueeMessage() {
@@ -70,18 +67,18 @@
     List<CustomModel> messages = new ArrayList<>();
     marqueeView.startWithList(messages);
     
-    // 在代码里设置自己的动画
+    // 設置自己的動畫
     marqueeView.startWithList(messages, R.anim.anim_bottom_in, R.anim.anim_top_out);
 
-#### 设置字符串数据
+#### 設置字串數據
 
-    String message = "心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！";
+    String message = "若要天幫，不如求人，若要求人，不如求己，凡事都必經學習之痛苦";
     marqueeView.startWithText(message);
     
-    // 在代码里设置自己的动画
+    // 設置自己的動畫
     marqueeView.startWithText(message, R.anim.anim_bottom_in, R.anim.anim_top_out);
 
-#### 设置事件监听
+#### 設置事件監聽
 
     marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
         @Override
@@ -90,7 +87,7 @@
         }
     });
 
-#### 重影问题可参考以下解决方案
+#### 重影問題可参考以下解決方案
 
 在 Activity 或 Fragment 中
 
